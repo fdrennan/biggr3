@@ -54,4 +54,4 @@ installr:
 	R -e "renv::rebuild()"
 	
 update:
-	sudo apt install update
+	sudo apt update
