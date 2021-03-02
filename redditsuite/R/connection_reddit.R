@@ -1,8 +1,9 @@
+
 #' connection_reddit
 #' @description Given a .Renviron file, connects to reddit
 #' @example
 #' \dontrun {
-#' con <- connection_reddit()
+#' connection_reddit()
 #' }
 #'
 #' @export connection_reddit

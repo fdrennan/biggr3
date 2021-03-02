@@ -28,7 +28,6 @@ RUN apt-get update --allow-releaseinfo-change -qq && apt-get install -y \
     r-base-dev
 
 
-
 RUN R -e "install.packages(c('renv', 'devtools', 'reticulate', 'shiny', 'rmarkdown', 'plumber'))"
 RUN R -e "renv::consent(provided = TRUE);renv::restore()"
 RUN R -e "reticulate::install_miniconda(force=TRUE)"
@@ -37,4 +36,4 @@ RUN R -e "reticulate::install_miniconda(force=TRUE)"
 RUN R -e "library(reticulate);py_install(c('boto3', 'praw'))"
 
 # Install our Package
-RUN R -e "devtools::install_github('fdrennan/redditsuite', ref='dev-2')"
+RUN R -e "devtools::install_github(repo = 'fdrennan/biggr3', subdir = 'redditsuite')"
