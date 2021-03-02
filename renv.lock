@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.0.3",
+    "Version": "4.0.4",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -169,13 +169,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "2b7d10581cc730804e9ed178c8374bd6"
-    },
-    "data.table": {
-      "Package": "data.table",
-      "Version": "1.14.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "d1b8b1a821ee564a3515fa6c6d5c52dc"
     },
     "dbplyr": {
       "Package": "dbplyr",
@@ -555,13 +548,6 @@
       "Repository": "CRAN",
       "Hash": "97def703420c8ab10d8f0e6c72101e02"
     },
-    "randomNames": {
-      "Package": "randomNames",
-      "Version": "1.4-0.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "5587371b1f1eff2da7bacc0e419058ed"
-    },
     "rappdirs": {
       "Package": "rappdirs",
       "Version": "0.3.3",
@@ -639,13 +625,6 @@
       "Repository": "CRAN",
       "Hash": "6e3b6ae7fe02b5859e4bb277f218b8ae"
     },
-    "snakecase": {
-      "Package": "snakecase",
-      "Version": "0.11.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "4079070fc210c7901c0832a3aeab894f"
-    },
     "sourcetools": {
       "Package": "sourcetools",
       "Version": "0.1.7",
@@ -701,13 +680,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "f0b0ba735febac9a8344253ae6fa93f5"
-    },
-    "toOrdinal": {
-      "Package": "toOrdinal",
-      "Version": "1.1-0.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "986b3f99e96a096469dcd4e04af8d794"
     },
     "utf8": {
       "Package": "utf8",
