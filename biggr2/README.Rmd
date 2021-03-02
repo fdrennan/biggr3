@@ -1,0 +1,63 @@
+---
+output: github_document
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# biggr2
+
+<!-- badges: start -->
+
+[![CircleCI build status](https://circleci.com/gh/fdrennan/biggr2.svg?style=svg)](https://circleci.com/gh/fdrennan/biggr2)
+
+[![codecov](https://codecov.io/gh/fdrennan/biggr2/branch/main/graph/badge.svg?token=bql3Sg35ae)](undefined)
+
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+
+<!-- badges: end -->
+
+![](https://codecov.io/gh/fdrennan/biggr2/commit/cffdd2c603842d321bcc29b00a78d4e1f732cfa1/graphs/sunburst.svg)
+
+[Code Coverage](https://codecov.io/gh/fdrennan/biggr2)
+
+Download the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("fdrennan/biggr2")
+```
+
+## Getting Started
+
+#### `s3` storage
+
+```{r}
+library(biggr2)
+library(dplyr)
+
+test_bucket_name <- 'fdrenabc'
+
+s3_client <- 
+  client(
+    service = "s3",
+    key_access = Sys.getenv("AWS_ACCESS"),
+    key_secret = Sys.getenv("AWS_SECRET"),
+    region = "us-east-2"
+ )
+```
+
+```{r}
+current_buckets <- s3_list_buckets(client = s3_client)
+```
+
