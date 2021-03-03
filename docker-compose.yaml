@@ -14,10 +14,9 @@ x-airflow-common:
     AIRFLOW__WEBSERVER__RBAC: 'true'
     #AIRFLOW__CORE__LOGGING_LEVEL: 'Debug'
   volumes:
-    - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
-    - ./plugins:/opt/airflow/plugins
-    - ./sql:/opt/airflow/sql
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID:-1000}:${AIRFLOW_GID:-0}"
   depends_on:
     redis:
@@ -118,8 +117,8 @@ services:
       - postgres-data:/var/lib/postgresql/data/
 
   rbase:
-    # image: fdrennan/biggr3
-    build: .
+    image: fdrennan/biggr3
+    # build: .
     restart: "always"
     user: 'root'
     volumes:

@@ -23,7 +23,7 @@ airflowdir:
 	mkdir -p -m 777 airflow/dags
 	mkdir -p -m 777 airflow/plugins
 	mkdir -p -m 777 airflow/scripts
-	mkdir -p -m 777 airflow/sql
+	mkdir -p -m 777 sql
 
 mpush:
 	git add --all
