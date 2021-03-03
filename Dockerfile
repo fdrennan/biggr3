@@ -28,12 +28,14 @@ RUN apt-get update --allow-releaseinfo-change -qq && apt-get install -y \
     r-base-dev
 
 
-RUN R -e "install.packages(c('renv', 'devtools', 'reticulate', 'shiny', 'rmarkdown', 'plumber'))"
+# RUN R -e "install.packages(c('renv', 'devtools', 'reticulate', 'shiny', 'rmarkdown', 'plumber'))"
+RUN R -e "install.packages('renv')"
 RUN R -e "renv::consent(provided = TRUE);renv::restore()"
 RUN R -e "reticulate::install_miniconda(force=TRUE)"
 
 # Set up reticulate/python
 RUN R -e "library(reticulate);py_install(c('boto3', 'praw'))"
-
+RUN R -e "renv::install('devtools')"
+RUN R -e "renv::install('lubridate')"
 # Install our Package
-RUN R -e "devtools::install_github(repo = 'fdrennan/biggr3', subdir = 'redditsuite')"
+RUN R -e "Sys.setenv(TZ=\"America/Denver\");devtools::install_github(repo = 'fdrennan/biggr3', subdir = 'redditsuite')"

@@ -118,12 +118,12 @@ services:
       - postgres-data:/var/lib/postgresql/data/
 
   rbase:
-    image: fdrennan/biggr3
-    # build: .
+    # image: fdrennan/biggr3
+    build: .
     restart: "always"
     user: 'root'
     volumes:
-      - ./main.R:/home/main.R
+      - ./main.R:/home/main.R:ro
       - ./.Renviron:/home/.Renviron:ro
       - ./sql:/home/sql
     command: "/usr/bin/Rscript /home/main.R"
