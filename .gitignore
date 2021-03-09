@@ -4,3 +4,4 @@
 .Rhistory
 renv.container
 .idea
+.Rdata
