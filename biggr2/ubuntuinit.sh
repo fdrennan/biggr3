@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/bin/bash
 
 set -o errexit

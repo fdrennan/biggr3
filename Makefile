@@ -24,6 +24,7 @@ airflowdir:
 	mkdir -p -m 777 airflow/plugins
 	mkdir -p -m 777 airflow/scripts
 	mkdir -p -m 777 sql
+	mkdir -p -m 777 renv.container
 
 mpush:
 	git add --all

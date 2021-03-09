@@ -10,7 +10,7 @@ x-airflow-common:
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: 81HqDtbqAywKSOumSha3BhWNOdQ26slT6K0YaZeZyPs=
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__WEBSERVER__RBAC: 'true'
     #AIRFLOW__CORE__LOGGING_LEVEL: 'Debug'
   volumes:
@@ -126,9 +126,23 @@ services:
       - ./.Renviron:/home/.Renviron:ro
       - ./sql:/home/sql
     command: "/usr/bin/Rscript /home/main.R"
-    ports:
-      - "8787:8787"
 
+  rstudio:
+    env_file:
+      - .Renviron
+    image: rocker/verse:latest
+    ports:
+     - '8787:8787'
+    volumes:
+      - ./biggr2:${RSTUDIO_HOME}/biggr2
+      - ./redditsuite:${RSTUDIO_HOME}/redditsuite
+      - ./.Renviron:${RSTUDIO_HOME}/.Renviron
+      - ./renv.lock:${RSTUDIO_HOME}/renv.lock
+      - ./rstudio_startup.sh:${RSTUDIO_HOME}/rstudio_startup.sh
+      - ./renv.container:/usr/local/lib/R/site-library
+      - ./.Rprofile:${RSTUDIO_HOME}/.Rprofile
+      - rstudio-home:${RSTUDIO_HOME}
 volumes:
+  rstudio-home:
   postgres-data:
   postgres-db-volume:
